@@ -10,50 +10,69 @@
   </head>
 
   <body>
-    <h1 class="title"><span class="bg-dark text-white">Bookers</span>
+  <header>
+    <div class="container" style="background-color: black; color: white">
+     <div class="row">
+      <div class="col-xs-4">
+
+    <h4 class="title" style="margin-top: 0; margin-bottom: 5px;">Bookers</h4>
+
+     </div>
+     <div class="col-xs-8" style="line-height: 40px">
+
     <nav class="nav-field">
-    <small>
-     <ul class="nav-list">
-      <span class="bg-dark text-white">
+     <ul class="nav-list text-right">
+      <span class="text-right">
       <% if user_signed_in? %>
-        <li class="glyphicon glyphicon-home" aria-hidden="true">
+        <li class="glyphicon glyphicon-home btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "Home", user_path(current_user) %>
         </li>
-        <li class="glyphicon glyphicon-user" aria-hidden="true">
+        <li class="glyphicon glyphicon-user btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "Users", users_path %>
         </li>
-        <li class="glyphicon glyphicon-book" aria-hidden="true">
+        <li  class="glyphicon glyphicon-book btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "Books", books_path %>
         </li>
-        <li class="glyphicon glyphicon-share" aria-hidden="truem">
+        <li class="glyphicon glyphicon-log-out btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "logout",destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
-        <li class="glyphicon glyphicon-home" aria-hidden="true">
+        <li class="glyphicon glyphicon-home btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "Home", root_path %>
         </li>
-        <li class="glyphicon glyphicon-link" aria-hidden="true">
+        <li class="glyphicon glyphicon-link btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "About", home_about_path %>
         </li>
-        <li class="glyphicon glyphicon-edit" aria-hidden="true"">
+        <li class="glyphicon glyphicon-edit btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "Sign up",new_user_registration_path %>
 
         </li>
-        <li class="glyphicon glyphicon-log-in" aria-hidden="tru">
+        <li class="glyphicon glyphicon-log-in btn btn-default" aria-hidden="true" style="background-color: black; color: white; border-color: black;">
           <%= link_to "login", new_user_session_path %>
         </li>
       </span>
       <% end %>
      </ul>
     </nav>
-    </small>
-    </h1>
+
+    </div>
+  </div>
+</div>
+
+  </header>
 
     <%= yield %>
 
-    <footer>
-      <h3>CopyRight Infratop.inc </h3>
+
+<div class="container">
+ <div class="row">
+  <div class="col-xs-12">
+    <footer class="foot text-right">
+      <h5>CopyRight Infratop.inc </h5>
     </footer>
+ </div>
+</div>
+</div>
 
   </body>
 </html>
