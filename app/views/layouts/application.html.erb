@@ -10,6 +10,50 @@
   </head>
 
   <body>
+    <h1 class="title"><span class="bg-dark text-white">Bookers</span>
+    <nav class="nav-field">
+    <small>
+     <ul class="nav-list">
+      <span class="bg-dark text-white">
+      <% if user_signed_in? %>
+        <li class="glyphicon glyphicon-home" aria-hidden="true">
+          <%= link_to "Home", user_path(current_user) %>
+        </li>
+        <li class="glyphicon glyphicon-user" aria-hidden="true">
+          <%= link_to "Users", users_path %>
+        </li>
+        <li class="glyphicon glyphicon-book" aria-hidden="true">
+          <%= link_to "Books", books_path %>
+        </li>
+        <li class="glyphicon glyphicon-share" aria-hidden="truem">
+          <%= link_to "logout",destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li class="glyphicon glyphicon-home" aria-hidden="true">
+          <%= link_to "Home", root_path %>
+        </li>
+        <li class="glyphicon glyphicon-link" aria-hidden="true">
+          <%= link_to "About", home_about_path %>
+        </li>
+        <li class="glyphicon glyphicon-edit" aria-hidden="true"">
+          <%= link_to "Sign up",new_user_registration_path %>
+
+        </li>
+        <li class="glyphicon glyphicon-log-in" aria-hidden="tru">
+          <%= link_to "login", new_user_session_path %>
+        </li>
+      </span>
+      <% end %>
+     </ul>
+    </nav>
+    </small>
+    </h1>
+
     <%= yield %>
+
+    <footer>
+      <h3>CopyRight Infratop.inc </h3>
+    </footer>
+
   </body>
 </html>

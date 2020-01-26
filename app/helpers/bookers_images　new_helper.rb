@@ -1,0 +1,2 @@
+module BookersImages　newHelper
+end
